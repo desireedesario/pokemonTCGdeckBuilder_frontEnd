@@ -19,6 +19,7 @@
       <input ng-model='selectedName' placeholder='name'>
       <button ng-click='searchDB()'></button>
     </div>
+
     <!-- <p>{{pkmnCtrl.cards}}</p> -->
     <ul class="pokemonLink" ng-repeat="pkmn in pkmnCtrl.allCards | orderBy: 'nationalPokedexNumber'">
       <li>{{$index + 1}}</li>

@@ -31,51 +31,17 @@ function pokemonController($http, $scope, $q) {
 
   function searchDB() {
     var promise1 = $http.get('https://api.pokemontcg.io/v1/cards?name=' + $scope.selectedName + '&types=' + $scope.selectedType + '&supertype=' + $scope.supertype + '&page=1&pageSize=1000')
-
-
-
     var promise2 = $http.get('https://api.pokemontcg.io/v1/cards?name=' + $scope.selectedName + '&types=' + $scope.selectedType + '&supertype=' + $scope.supertype + '&page=1&pageSize=1000')
-
-
-
     var promise3 = $http.get('https://api.pokemontcg.io/v1/cards?name=' + $scope.selectedName + '&types=' + $scope.selectedType + '&supertype=' + $scope.supertype + '&page=3&pageSize=1000')
-
-
-
     var promise4 = $http.get('https://api.pokemontcg.io/v1/cards?name=' + $scope.selectedName + '&types=' + $scope.selectedType + '&supertype=' + $scope.supertype + '&page=4&pageSize=1000')
-
-
-
     var promise5 = $http.get('https://api.pokemontcg.io/v1/cards?name=' + $scope.selectedName + '&types=' + $scope.selectedType + '&supertype=' + $scope.supertype + '&page=5&pageSize=1000')
-
-
-
     var promise6 = $http.get('https://api.pokemontcg.io/v1/cards?name=' + $scope.selectedName + '&types=' + $scope.selectedType + '&supertype=' + $scope.supertype + '&page=6&pageSize=1000')
-
-
-
     var promise7 = $http.get('https://api.pokemontcg.io/v1/cards?name=' + $scope.selectedName + '&types=' + $scope.selectedType + '&supertype=' + $scope.supertype + '&page=7&pageSize=1000')
-
-
-
     var promise8 = $http.get('https://api.pokemontcg.io/v1/cards?name=' + $scope.selectedName + '&types=' + $scope.selectedType + '&supertype=' + $scope.supertype + '&page=8&pageSize=1000')
-
-
-
     var promise9 = $http.get('https://api.pokemontcg.io/v1/cards?name=' + $scope.selectedName + '&types=' + $scope.selectedType + '&supertype=' + $scope.supertype + '&page=9&pageSize=1000')
 
-
     $q.all([promise1, promise2, promise3, promise4, promise5, promise6, promise7, promise8, promise9]).then(function(data){
-      self.allCards = new Array();
-      self.allCards.push(data[0].data.cards)
-      self.allCards.push(data[1].data.cards)
-      self.allCards.push(data[2].data.cards)
-      self.allCards.push(data[3].data.cards)
-      self.allCards.push(data[4].data.cards)
-      self.allCards.push(data[5].data.cards)
-      self.allCards.push(data[6].data.cards)
-      self.allCards.push(data[7].data.cards)
-      self.allCards.push(data[8].data.cards)
+      self.allCards.push(data[0].data.cards, data[1].data.cards, data[2].data.cards, data[3].data.cards, data[4].data.cards, data[5].data.cards, data[6].data.cards, data[7].data.cards, data[8].data.cards)
       self.allCards = [].concat.apply([], self.allCards)
       console.log(self.allCards)
     })
