@@ -7,8 +7,7 @@ body {
     font-family: pokeFont;
 }
 
-li {
-  display: inline;
-  list-style-type: none;
-
+img {
+  height: 10px;
+  width: 10px;
 }

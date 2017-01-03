@@ -4,7 +4,7 @@ angular.module('pokemon')
 function pokemonController($http, $scope, $q) {
   var self = this;
   self.allCards = new Array();
-
+  $scope.consoler = consoler
   $scope.searchDB = searchDB
     $scope.selectedName = ''
     $scope.types = [
@@ -66,6 +66,7 @@ function pokemonController($http, $scope, $q) {
 
 
     $q.all([promise1, promise2, promise3, promise4, promise5, promise6, promise7, promise8, promise9]).then(function(data){
+      self.allCards = new Array();
       self.allCards.push(data[0].data.cards)
       self.allCards.push(data[1].data.cards)
       self.allCards.push(data[2].data.cards)
@@ -79,5 +80,9 @@ function pokemonController($http, $scope, $q) {
       console.log(self.allCards)
     })
     // self.allCards.push(self.cards1, self.cards2, self.cards3, self.cards4, self.cards5, self.cards6, self.cards7, self.cards8, self.cards9)
+  }
+
+  function consoler() {
+    console.log($scope.selectedType)
   }
 }
