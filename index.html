@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="pokemon">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src='js/pokemonController.js'>
+
+    </script>
+  </head>
+  <body ng-controller="pokemonController as pkmnCtrl">
+    <div id="header">
+      <select ng-model='selectedType' ng-options='t.value as t.display for t in types'></select>
+      <select ng-model='supertype' ng-options='st.value as st.display for st in supertypes'></select>
+      <input ng-model='selectedName' placeholder='name'>
+      <button ng-click='searchDB()'></button>
+    </div>
+    <!-- <p>{{pkmnCtrl.cards}}</p> -->
+    <ul ng-repeat="pkmn in pkmnCtrl.allCards | orderBy: 'nationalPokedexNumber'">
+      <li>{{$index + 1}}</li>
+      <li>No. {{pkmn.nationalPokedexNumber}} {{pkmn.name}}</li>
+    </ul>
+    <!-- <ul ng-repeat="pkmn in pkmnCtrl.cards2.data.cards | orderBy: 'nationalPokedexNumber'">
+      <li>{{$index + 1001}}</li>
+      <li>No. {{pkmn.nationalPokedexNumber}} {{pkmn.name}}</li>
+    </ul>
+    <ul ng-repeat="pkmn in pkmnCtrl.cards3.data.cards | orderBy: 'nationalPokedexNumber'">
+      <li>{{$index + 2001}}</li>
+      <li>No. {{pkmn.nationalPokedexNumber}} {{pkmn.name}}</li>
+    </ul>
+    <ul ng-repeat="pkmn in pkmnCtrl.cards4.data.cards | orderBy: 'nationalPokedexNumber'">
+      <li>{{$index + 3001}}</li>
+      <li>No. {{pkmn.nationalPokedexNumber}} {{pkmn.name}}</li>
+    </ul>
+    <ul ng-repeat="pkmn in pkmnCtrl.cards5.data.cards | orderBy: 'nationalPokedexNumber'">
+      <li>{{$index + 4001}}</li>
+      <li>No. {{pkmn.nationalPokedexNumber}} {{pkmn.name}}</li>
+    </ul>
+    <ul ng-repeat="pkmn in pkmnCtrl.cards6.data.cards | orderBy: 'nationalPokedexNumber'">
+      <li>{{$index + 5001}}</li>
+      <li>No. {{pkmn.nationalPokedexNumber}} {{pkmn.name}}</li>
+    </ul>
+    <ul ng-repeat="pkmn in pkmnCtrl.cards7.data.cards | orderBy: 'nationalPokedexNumber'">
+      <li>{{$index + 6001}}</li>
+      <li>No. {{pkmn.nationalPokedexNumber}} {{pkmn.name}}</li>
+    </ul>
+    <ul ng-repeat="pkmn in pkmnCtrl.cards8.data.cards | orderBy: 'nationalPokedexNumber'">
+      <li>{{$index + 7001}}</li>
+      <li>No. {{pkmn.nationalPokedexNumber}} {{pkmn.name}}</li>
+    </ul>
+    <ul ng-repeat="pkmn in pkmnCtrl.cards9.data.cards | orderBy: 'nationalPokedexNumber'">
+      <li>{{$index + 8001}}</li>
+      <li>No. {{pkmn.nationalPokedexNumber}} {{pkmn.name}}</li>
+    </ul> -->
+  </body>
+</html>

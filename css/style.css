@@ -1,0 +1,14 @@
+@font-face {
+    font-family: pokeFont;
+    src: url(PokemonGB.ttf);
+}
+
+body {
+    font-family: pokeFont;
+}
+
+li {
+  display: inline;
+  list-style-type: none;
+
+}
