@@ -13,7 +13,7 @@
 
   </head>
   <body ng-controller="pokemonController as pkmnCtrl">
-    <div id="header">
+    <div id="header" style="display:block">
       <select ng-model='selectedType' ng-options='t.value as t.display for t in types' ng-change="consoler()"></select>
       <select ng-model='supertype' ng-options='st.value as st.display for st in supertypes'></select>
       <input ng-model='selectedName' placeholder='name'>
@@ -21,10 +21,9 @@
     </div>
 
     <!-- <p>{{pkmnCtrl.cards}}</p> -->
-    <ul class="pokemonLink" ng-repeat="pkmn in pkmnCtrl.allCards | orderBy: 'nationalPokedexNumber'">
-      <li>{{$index + 1}}</li>
-      <li>No. {{pkmn.nationalPokedexNumber}} {{pkmn.name}}</li>
-
-    </ul>
+    <div class="pokemonLink" ng-repeat="pkmn in pkmnCtrl.allCards | orderBy: 'nationalPokedexNumber'">
+      <img ng-src="{{pkmn.imageUrl}}">
+      <!-- <li>No. {{pkmn.nationalPokedexNumber}} {{pkmn.name}}</li> -->
+    </div>
   </body>
 </html>

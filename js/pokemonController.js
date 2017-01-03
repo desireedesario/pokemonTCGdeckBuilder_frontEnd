@@ -41,6 +41,7 @@ function pokemonController($http, $scope, $q) {
     var promise9 = $http.get('https://api.pokemontcg.io/v1/cards?name=' + $scope.selectedName + '&types=' + $scope.selectedType + '&supertype=' + $scope.supertype + '&page=9&pageSize=1000')
 
     $q.all([promise1, promise2, promise3, promise4, promise5, promise6, promise7, promise8, promise9]).then(function(data){
+      self.allCards = new Array();
       self.allCards.push(data[0].data.cards, data[1].data.cards, data[2].data.cards, data[3].data.cards, data[4].data.cards, data[5].data.cards, data[6].data.cards, data[7].data.cards, data[8].data.cards)
       self.allCards = [].concat.apply([], self.allCards)
       console.log(self.allCards)
